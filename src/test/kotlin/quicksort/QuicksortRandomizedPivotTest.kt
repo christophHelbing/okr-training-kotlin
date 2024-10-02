@@ -5,13 +5,13 @@ import assertk.assertions.isEqualTo
 import common.measureExecutionTime
 import org.junit.jupiter.api.Test
 
-class QuicksortTest {
+class QuicksortRandomizedPivotTest {
     @Test
     fun `sorting a random mixed int array with normal quick sort`() {
         val array = intArrayOf(57, 36, 4, 85, 19, 76, 6, 19, 56, 62)
         val expected = intArrayOf(4, 6, 19, 19, 36, 56, 57, 62, 76, 85)
 
-        val result = measureExecutionTime("Test 1") { quickSort(array = array) }
+        val result = measureExecutionTime("Test 1") { quickSortWithRandomizedPivot(array = array) }
 
         assertThat(result).isEqualTo(expected)
     }
@@ -22,7 +22,7 @@ class QuicksortTest {
         val expected = largeArray.copyOf()
         expected.sort()
 
-        val result = measureExecutionTime("Test 2") { quickSort(largeArray) }
+        val result = measureExecutionTime("Test 2") { quickSortWithRandomizedPivot(largeArray) }
 
         assertThat(result).isEqualTo(expected)
     }
@@ -33,7 +33,7 @@ class QuicksortTest {
         largeArray.sort()
         val expected = largeArray.copyOf()
 
-        val result = measureExecutionTime("Test 3") { quickSort(largeArray) }
+        val result = measureExecutionTime("Test 3") { quickSortWithRandomizedPivot(largeArray) }
 
         assertThat(result).isEqualTo(expected)
     }
