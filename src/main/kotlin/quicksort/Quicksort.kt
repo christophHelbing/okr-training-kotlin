@@ -24,7 +24,7 @@ fun quickSort(array: IntArray): IntArray {
 fun quickSortWithRandomizedPivot(array: IntArray): IntArray {
     if(array.size < 2) return array
 
-    val pivot = array.indices.random()
+    val pivot = array[array.indices.random()]
 
     var less = intArrayOf()
     var greater = intArrayOf()
