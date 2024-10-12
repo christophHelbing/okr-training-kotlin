@@ -14,9 +14,9 @@ fun main() {
     measureExecutionTime("Normal Quicksort of sorted array of 1000 elements") { quickSort(array = sortedLargeArray) }
 
 
-    measureExecutionTime("Random Pivot Quicksort of array of 10 elements") { quickSort(array = array) }
-    measureExecutionTime("Random Pivot Quicksort of array of 1000 elements") { quickSort(array = largeArray) }
-    measureExecutionTime("Random Pivot Quicksort of sorted array of 1000 elements") { quickSort(array = sortedLargeArray) }
+    measureExecutionTime("Random Pivot Quicksort of array of 10 elements") { quickSortWithRandomizedPivot(array = array) }
+    measureExecutionTime("Random Pivot Quicksort of array of 1000 elements") { quickSortWithRandomizedPivot(array = largeArray) }
+    measureExecutionTime("Random Pivot Quicksort of sorted array of 1000 elements") { quickSortWithRandomizedPivot(array = sortedLargeArray) }
 }
 
 fun <T> measureExecutionTime(description: String, block: () -> T): T {
